@@ -8,11 +8,39 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UITableViewController {
+    
+    var items = [
+        "Circular Transition"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        navigationItem.title = "Playground"
+        tableView.rowHeight = 60
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        }
+        
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 20)
+        cell?.detailTextLabel?.text = items[indexPath.row]
+        
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            present(CTSourceController(), animated: true, completion: nil)
+        }
     }
     
 }
