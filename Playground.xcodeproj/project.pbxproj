@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B69916DD1F1AF25400B18D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69916DC1F1AF25400B18D6B /* AppDelegate.swift */; };
-		B69916DF1F1AF25400B18D6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69916DE1F1AF25400B18D6B /* ViewController.swift */; };
-		B69916E21F1AF25400B18D6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69916E01F1AF25400B18D6B /* Main.storyboard */; };
 		B69916E41F1AF25400B18D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69916E31F1AF25400B18D6B /* Assets.xcassets */; };
 		B69916E71F1AF25400B18D6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69916E51F1AF25400B18D6B /* LaunchScreen.storyboard */; };
 		B69916F21F1AF25400B18D6B /* PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69916F11F1AF25400B18D6B /* PlaygroundTests.swift */; };
 		B69916FD1F1AF25400B18D6B /* PlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69916FC1F1AF25400B18D6B /* PlaygroundUITests.swift */; };
+		B6AC81751F1AF3E200C35351 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC81741F1AF3E200C35351 /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +35,6 @@
 /* Begin PBXFileReference section */
 		B69916D91F1AF25400B18D6B /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69916DC1F1AF25400B18D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B69916DE1F1AF25400B18D6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B69916E11F1AF25400B18D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B69916E31F1AF25400B18D6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69916E61F1AF25400B18D6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B69916E81F1AF25400B18D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +44,7 @@
 		B69916F81F1AF25400B18D6B /* PlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69916FC1F1AF25400B18D6B /* PlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundUITests.swift; sourceTree = "<group>"; };
 		B69916FE1F1AF25400B18D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6AC81741F1AF3E200C35351 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				B69916DC1F1AF25400B18D6B /* AppDelegate.swift */,
-				B69916DE1F1AF25400B18D6B /* ViewController.swift */,
-				B69916E01F1AF25400B18D6B /* Main.storyboard */,
+				B6AC81741F1AF3E200C35351 /* HomeController.swift */,
 				B69916E31F1AF25400B18D6B /* Assets.xcassets */,
 				B69916E51F1AF25400B18D6B /* LaunchScreen.storyboard */,
 				B69916E81F1AF25400B18D6B /* Info.plist */,
@@ -188,7 +185,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Jack Lai";
 				TargetAttributes = {
 					B69916D81F1AF25400B18D6B = {
@@ -237,7 +234,6 @@
 			files = (
 				B69916E71F1AF25400B18D6B /* LaunchScreen.storyboard in Resources */,
 				B69916E41F1AF25400B18D6B /* Assets.xcassets in Resources */,
-				B69916E21F1AF25400B18D6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69916DF1F1AF25400B18D6B /* ViewController.swift in Sources */,
+				B6AC81751F1AF3E200C35351 /* HomeController.swift in Sources */,
 				B69916DD1F1AF25400B18D6B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,14 +295,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B69916E01F1AF25400B18D6B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B69916E11F1AF25400B18D6B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B69916E51F1AF25400B18D6B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -328,7 +316,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -336,7 +326,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -379,7 +373,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -387,7 +383,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -420,7 +420,7 @@
 				DEVELOPMENT_TEAM = Q82A2F8QX2;
 				INFOPLIST_FILE = Playground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.jack.Playground;
+				PRODUCT_BUNDLE_IDENTIFIER = info.jack.playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -433,7 +433,7 @@
 				DEVELOPMENT_TEAM = Q82A2F8QX2;
 				INFOPLIST_FILE = Playground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.jack.Playground;
+				PRODUCT_BUNDLE_IDENTIFIER = info.jack.playground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -516,6 +516,7 @@
 				B69917031F1AF25400B18D6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B69917041F1AF25400B18D6B /* Build configuration list for PBXNativeTarget "PlaygroundTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +525,7 @@
 				B69917061F1AF25400B18D6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B69917071F1AF25400B18D6B /* Build configuration list for PBXNativeTarget "PlaygroundUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +534,7 @@
 				B69917091F1AF25400B18D6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
