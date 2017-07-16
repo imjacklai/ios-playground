@@ -11,7 +11,8 @@ import UIKit
 class HomeController: UITableViewController {
     
     var items = [
-        "Circular Transition"
+        "Circular Transition",
+        "Speech To Text"
     ]
     
     override func viewDidLoad() {
@@ -38,8 +39,12 @@ class HomeController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             present(CTSourceController(), animated: true, completion: nil)
+        case 1:
+            navigationController?.pushViewController(SpeechController(), animated: true)
+        default:()
         }
     }
     
