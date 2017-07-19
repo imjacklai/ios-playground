@@ -12,7 +12,8 @@ class HomeController: UITableViewController {
     
     var items = [
         "Circular Transition",
-        "Speech To Text"
+        "Speech To Text",
+        "Barcode Scanner"
     ]
     
     override func viewDidLoad() {
@@ -44,6 +45,8 @@ class HomeController: UITableViewController {
             present(CTSourceController(), animated: true, completion: nil)
         case 1:
             navigationController?.pushViewController(SpeechController(), animated: true)
+        case 2:
+            present(BarCodeScannerController(), animated: true, completion: nil)
         default:()
         }
     }

@@ -19,6 +19,7 @@
 		B69916FD1F1AF25400B18D6B /* PlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69916FC1F1AF25400B18D6B /* PlaygroundUITests.swift */; };
 		B6A4B9541F1B5D210055BE5B /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A4B9531F1B5D210055BE5B /* SpeechController.swift */; };
 		B6AC81751F1AF3E200C35351 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC81741F1AF3E200C35351 /* HomeController.swift */; };
+		B6DF5B871F1F8FB7007E1BD5 /* BarcodeScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DF5B861F1F8FB7007E1BD5 /* BarcodeScannerController.swift */; };
 		EA3CBE0393CC801468EC3DFE /* Pods_PlaygroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB71D6574BC03FB42F9DBAB /* Pods_PlaygroundTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B69916FE1F1AF25400B18D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6A4B9531F1B5D210055BE5B /* SpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		B6AC81741F1AF3E200C35351 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		B6DF5B861F1F8FB7007E1BD5 /* BarcodeScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScannerController.swift; sourceTree = "<group>"; };
 		CDB71D6574BC03FB42F9DBAB /* Pods_PlaygroundTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaygroundTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 				B6AC81741F1AF3E200C35351 /* HomeController.swift */,
 				B627AEF51F1AF8FC0096384B /* CircularTransition */,
 				B6A4B9521F1B5CE20055BE5B /* SpeechToText */,
+				B6DF5B851F1F8F7D007E1BD5 /* Barcode */,
 				B69916E31F1AF25400B18D6B /* Assets.xcassets */,
 				B69916E51F1AF25400B18D6B /* LaunchScreen.storyboard */,
 				B69916E81F1AF25400B18D6B /* Info.plist */,
@@ -188,6 +191,14 @@
 				B6A4B9531F1B5D210055BE5B /* SpeechController.swift */,
 			);
 			name = SpeechToText;
+			sourceTree = "<group>";
+		};
+		B6DF5B851F1F8F7D007E1BD5 /* Barcode */ = {
+			isa = PBXGroup;
+			children = (
+				B6DF5B861F1F8FB7007E1BD5 /* BarcodeScannerController.swift */,
+			);
+			name = Barcode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +489,7 @@
 				B627AEFB1F1AFB800096384B /* CTTargetController.swift in Sources */,
 				B69916DD1F1AF25400B18D6B /* AppDelegate.swift in Sources */,
 				B627AEF91F1AF9720096384B /* CTSourceController.swift in Sources */,
+				B6DF5B871F1F8FB7007E1BD5 /* BarcodeScannerController.swift in Sources */,
 				B6A4B9541F1B5D210055BE5B /* SpeechController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
