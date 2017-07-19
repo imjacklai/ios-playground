@@ -16,9 +16,8 @@ class CTTargetController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        button.setTitle("X", for: .normal)
-        button.setTitleColor(UIColor("#4E6BCC"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.tintColor = UIColor("#4E6BCC")
+        button.setImage(#imageLiteral(resourceName: "close").withRenderingMode(.alwaysTemplate), for: .normal)
         button.backgroundColor = .white
         button.layer.cornerRadius = buttonSize / 2
         button.layer.masksToBounds = true
