@@ -10,8 +10,8 @@ import UIKit
 
 class CTTargetController: UIViewController {
     
-    let buttonSize: CGFloat = 80
-    let button = UIButton(type: .system)
+    fileprivate let buttonSize: CGFloat = 80
+    fileprivate let button = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class CTTargetController: UIViewController {
         }
     }
     
-    func handleDismiss() {
+    @objc fileprivate func handleDismiss() {
         dismiss(animated: true, completion: nil)
     }
     

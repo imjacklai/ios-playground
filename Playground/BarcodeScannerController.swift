@@ -11,17 +11,17 @@ import AVFoundation
 
 class BarCodeScannerController: BaseController {
     
-    var captureSession: AVCaptureSession?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    fileprivate var captureSession: AVCaptureSession?
+    fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    let barcodeFrameView: UIView = {
+    fileprivate let barcodeFrameView: UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.green.cgColor
         view.layer.borderWidth = 2
         return view
     }()
     
-    let infoLabel: UILabel = {
+    fileprivate let infoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -29,7 +29,7 @@ class BarCodeScannerController: BaseController {
         return label
     }()
     
-    let supportedCodeTypes = [
+    fileprivate let supportedCodeTypes = [
         AVMetadataObjectTypeQRCode,
         AVMetadataObjectTypeEAN8Code,
         AVMetadataObjectTypeUPCECode,
@@ -61,7 +61,7 @@ class BarCodeScannerController: BaseController {
         setupVideoPreviewLayer()
     }
     
-    func setupVideoPreviewLayer() {
+    fileprivate func setupVideoPreviewLayer() {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
@@ -82,8 +82,6 @@ class BarCodeScannerController: BaseController {
             view.layer.insertSublayer(videoPreviewLayer!, at: 0)
             
             captureSession?.startRunning()
-            
-            
         } catch {
             fatalError(error as! String)
         }

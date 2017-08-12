@@ -11,13 +11,13 @@ import Speech
 
 class SpeechController: BaseController {
     
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_Hant"))
-    let audioEngine = AVAudioEngine()
-    var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    var recognitionTask: SFSpeechRecognitionTask?
+    fileprivate let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_Hant"))
+    fileprivate let audioEngine = AVAudioEngine()
+    fileprivate var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    fileprivate var recognitionTask: SFSpeechRecognitionTask?
     
-    let outputLabel = UILabel()
-    let microphoneButton = UIButton(type: .system)
+    fileprivate let outputLabel = UILabel()
+    fileprivate let microphoneButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,18 @@ class SpeechController: BaseController {
         requestSpeechAuthorization()
     }
     
-    func requestSpeechAuthorization() {
+    @objc fileprivate func microphoneButtonTapped() {
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            microphoneButton.setTitle("開始錄音", for: .normal)
+        } else {
+            startRecording()
+            microphoneButton.setTitle("停止錄音", for: .normal)
+        }
+    }
+    
+    fileprivate func requestSpeechAuthorization() {
         speechRecognizer?.delegate = self
         
         SFSpeechRecognizer.requestAuthorization { (status) in
@@ -83,18 +94,7 @@ class SpeechController: BaseController {
         }
     }
     
-    func microphoneButtonTapped() {
-        if audioEngine.isRunning {
-            audioEngine.stop()
-            recognitionRequest?.endAudio()
-            microphoneButton.setTitle("開始錄音", for: .normal)
-        } else {
-            startRecording()
-            microphoneButton.setTitle("停止錄音", for: .normal)
-        }
-    }
-    
-    func startRecording() {
+    fileprivate func startRecording() {
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil

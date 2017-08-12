@@ -14,10 +14,11 @@ class CircularTransition: NSObject {
         case present, dismiss, pop
     }
     
-    var circleView = UIView()
+    fileprivate var circleView = UIView()
+    fileprivate var duration = 0.3
+    
     var circleColor = UIColor.white
     var startPoint = CGPoint.zero
-    var duration = 0.3
     var transitionMode = TransitionMode.present
     
     fileprivate func circleFrame(viewCenter: CGPoint, viewSize: CGSize, startPoint: CGPoint) -> CGRect {

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeController: UITableViewController {
     
-    var items = [
+    fileprivate let items = [
         "Circular Transition",
         "Speech To Text",
         "Barcode Scanner"
