@@ -44,7 +44,7 @@ class HomeController: UITableViewController {
         case 0:
             present(CTSourceController(), animated: true, completion: nil)
         case 1:
-            navigationController?.pushViewController(SpeechController(), animated: true)
+            present(SpeechController(), animated: true, completion: nil)
         case 2:
             present(BarCodeScannerController(), animated: true, completion: nil)
         default:()

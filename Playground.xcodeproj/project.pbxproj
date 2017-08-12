@@ -12,6 +12,7 @@
 		B627AEF91F1AF9720096384B /* CTSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627AEF81F1AF9720096384B /* CTSourceController.swift */; };
 		B627AEFB1F1AFB800096384B /* CTTargetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627AEFA1F1AFB800096384B /* CTTargetController.swift */; };
 		B627AEFD1F1AFB940096384B /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B627AEFC1F1AFB940096384B /* CircularTransition.swift */; };
+		B650A4A41F3EA1AD00700DB4 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B650A4A31F3EA1AD00700DB4 /* BaseController.swift */; };
 		B69916DD1F1AF25400B18D6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69916DC1F1AF25400B18D6B /* AppDelegate.swift */; };
 		B69916E41F1AF25400B18D6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69916E31F1AF25400B18D6B /* Assets.xcassets */; };
 		B69916E71F1AF25400B18D6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69916E51F1AF25400B18D6B /* LaunchScreen.storyboard */; };
@@ -52,6 +53,7 @@
 		B627AEF81F1AF9720096384B /* CTSourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTSourceController.swift; sourceTree = "<group>"; };
 		B627AEFA1F1AFB800096384B /* CTTargetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTTargetController.swift; sourceTree = "<group>"; };
 		B627AEFC1F1AFB940096384B /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		B650A4A31F3EA1AD00700DB4 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		B69916D91F1AF25400B18D6B /* Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69916DC1F1AF25400B18D6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B69916E31F1AF25400B18D6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				B69916DC1F1AF25400B18D6B /* AppDelegate.swift */,
 				B6AC81741F1AF3E200C35351 /* HomeController.swift */,
+				B650A4A31F3EA1AD00700DB4 /* BaseController.swift */,
 				B627AEF51F1AF8FC0096384B /* CircularTransition */,
 				B6A4B9521F1B5CE20055BE5B /* SpeechToText */,
 				B6DF5B851F1F8F7D007E1BD5 /* Barcode */,
@@ -490,6 +493,7 @@
 				B69916DD1F1AF25400B18D6B /* AppDelegate.swift in Sources */,
 				B627AEF91F1AF9720096384B /* CTSourceController.swift in Sources */,
 				B6DF5B871F1F8FB7007E1BD5 /* BarcodeScannerController.swift in Sources */,
+				B650A4A41F3EA1AD00700DB4 /* BaseController.swift in Sources */,
 				B6A4B9541F1B5D210055BE5B /* SpeechController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

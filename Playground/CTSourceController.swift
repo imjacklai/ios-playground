@@ -10,22 +10,15 @@ import UIKit
 import SnapKit
 import UIColor_Hex_Swift
 
-class CTSourceController: UIViewController {
+class CTSourceController: BaseController {
     
     let buttonSize: CGFloat = 80
     let button = UIButton(type: .system)
     let transition = CircularTransition()
     
-    let backButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.tintColor = UIColor("#4E6BCC")
-        button.setImage(#imageLiteral(resourceName: "close").withRenderingMode(.alwaysTemplate), for: .normal)
-        button.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupBackButton(color: UIColor("#4E6BCC"))
         
         button.setTitle("Tap!", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -37,16 +30,10 @@ class CTSourceController: UIViewController {
         
         view.backgroundColor = .white
         view.addSubview(button)
-        view.addSubview(backButton)
         
         button.snp.makeConstraints { (make) in
             make.width.height.equalTo(buttonSize)
             make.center.equalTo(view)
-        }
-        
-        backButton.snp.makeConstraints { (make) in
-            make.top.equalTo(view).offset(40)
-            make.left.equalTo(view).offset(20)
         }
     }
     
@@ -55,10 +42,6 @@ class CTSourceController: UIViewController {
         targetController.transitioningDelegate = self
         targetController.modalPresentationStyle = .custom
         present(targetController, animated: true, completion: nil)
-    }
-    
-    func dismissController() {
-        dismiss(animated: true, completion: nil)
     }
     
 }

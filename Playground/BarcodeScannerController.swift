@@ -9,17 +9,10 @@
 import UIKit
 import AVFoundation
 
-class BarCodeScannerController: UIViewController {
+class BarCodeScannerController: BaseController {
     
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    
-    let backButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "close").withRenderingMode(.alwaysOriginal), for: .normal)
-        button.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
-        return button
-    }()
     
     let barcodeFrameView: UIView = {
         let view = UIView()
@@ -56,14 +49,10 @@ class BarCodeScannerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(backButton)
+        super.setupBackButton(color: .white)
+
         view.addSubview(barcodeFrameView)
         view.addSubview(infoLabel)
-        
-        backButton.snp.makeConstraints { (make) in
-            make.left.top.equalTo(view).offset(20)
-        }
         
         infoLabel.snp.makeConstraints({ (make) in
             make.width.bottom.equalTo(view)
@@ -98,10 +87,6 @@ class BarCodeScannerController: UIViewController {
         } catch {
             fatalError(error as! String)
         }
-    }
-    
-    func dismissController() {
-        dismiss(animated: true, completion: nil)
     }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Speech
 
-class SpeechController: UIViewController {
+class SpeechController: BaseController {
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_Hant"))
     let audioEngine = AVAudioEngine()
@@ -21,6 +21,7 @@ class SpeechController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.setupBackButton(color: .black)
         
         let label = UILabel()
         label.text = "按下錄音按鈕並開始說話"
