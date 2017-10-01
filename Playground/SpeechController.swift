@@ -11,13 +11,13 @@ import Speech
 
 class SpeechController: BaseController {
     
-    fileprivate let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_Hant"))
-    fileprivate let audioEngine = AVAudioEngine()
-    fileprivate var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    fileprivate var recognitionTask: SFSpeechRecognitionTask?
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh_Hant"))
+    private let audioEngine = AVAudioEngine()
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
     
-    fileprivate let outputLabel = UILabel()
-    fileprivate let microphoneButton = UIButton(type: .system)
+    private let outputLabel = UILabel()
+    private let microphoneButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class SpeechController: BaseController {
         requestSpeechAuthorization()
     }
     
-    @objc fileprivate func microphoneButtonTapped() {
+    @objc private func microphoneButtonTapped() {
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
@@ -71,7 +71,7 @@ class SpeechController: BaseController {
         }
     }
     
-    fileprivate func requestSpeechAuthorization() {
+    private func requestSpeechAuthorization() {
         speechRecognizer?.delegate = self
         
         SFSpeechRecognizer.requestAuthorization { (status) in
@@ -94,7 +94,7 @@ class SpeechController: BaseController {
         }
     }
     
-    fileprivate func startRecording() {
+    private func startRecording() {
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
@@ -112,10 +112,6 @@ class SpeechController: BaseController {
         
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
-        guard let inputNode = audioEngine.inputNode else {
-            fatalError("Audio engine has no input node")
-        }
-        
         guard let recognitionRequest = recognitionRequest else {
             fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
         }
@@ -132,7 +128,7 @@ class SpeechController: BaseController {
             
             if error != nil || isFinal {
                 self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
+                self.audioEngine.inputNode.removeTap(onBus: 0)
                 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
@@ -141,8 +137,8 @@ class SpeechController: BaseController {
             }
         })
         
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+        let recordingFormat = audioEngine.inputNode.outputFormat(forBus: 0)
+        audioEngine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
             self.recognitionRequest?.append(buffer)
         }
         

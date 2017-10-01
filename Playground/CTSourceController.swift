@@ -12,9 +12,9 @@ import UIColor_Hex_Swift
 
 class CTSourceController: BaseController {
     
-    fileprivate let buttonSize: CGFloat = 80
-    fileprivate let button = UIButton(type: .system)
-    fileprivate let transition = CircularTransition()
+    private let buttonSize: CGFloat = 80
+    private let button = UIButton(type: .system)
+    private let transition = CircularTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class CTSourceController: BaseController {
         }
     }
     
-    @objc fileprivate func handlePresent() {
+    @objc private func handlePresent() {
         let targetController = CTTargetController()
         targetController.transitioningDelegate = self
         targetController.modalPresentationStyle = .custom

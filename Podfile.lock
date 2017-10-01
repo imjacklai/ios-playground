@@ -1,18 +1,27 @@
 PODS:
-  - Kingfisher (3.10.3)
-  - SnapKit (3.2.0)
-  - UIColor_Hex_Swift (3.0.2)
+  - Kingfisher (4.1.0)
+  - SnapKit (4.0.0)
+  - UIColor_Hex_Swift (4.0.0)
 
 DEPENDENCIES:
-  - Kingfisher
-  - SnapKit
-  - UIColor_Hex_Swift
+  - Kingfisher (~> 4.1.0)
+  - SnapKit (~> 4.0.0)
+  - UIColor_Hex_Swift (from `https://github.com/yeahdongcn/UIColor-Hex-Swift`)
+
+EXTERNAL SOURCES:
+  UIColor_Hex_Swift:
+    :git: https://github.com/yeahdongcn/UIColor-Hex-Swift
+
+CHECKOUT OPTIONS:
+  UIColor_Hex_Swift:
+    :commit: 7b46ec7384204d53a42eb769de17198ccd9e196c
+    :git: https://github.com/yeahdongcn/UIColor-Hex-Swift
 
 SPEC CHECKSUMS:
-  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
+  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  UIColor_Hex_Swift: a7b39ce3da75b7c187ede49b1664aeea1d441c20
 
-PODFILE CHECKSUM: dd02e31eae90798d4d05742b8f095acef76a9bd6
+PODFILE CHECKSUM: ff8e48777eac4d8f81b4feb60db7f5151d45061b
 
 COCOAPODS: 1.2.1

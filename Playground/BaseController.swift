@@ -23,7 +23,7 @@ class BaseController: UIViewController {
         }
     }
     
-    @objc fileprivate func back() {
+    @objc private func back() {
         dismiss(animated: true, completion: nil)
     }
     

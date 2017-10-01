@@ -11,17 +11,17 @@ import AVFoundation
 
 class BarCodeScannerController: BaseController {
     
-    fileprivate var captureSession: AVCaptureSession?
-    fileprivate var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    private var captureSession: AVCaptureSession?
+    private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    fileprivate let barcodeFrameView: UIView = {
+    private let barcodeFrameView: UIView = {
         let view = UIView()
         view.layer.borderColor = UIColor.green.cgColor
         view.layer.borderWidth = 2
         return view
     }()
     
-    fileprivate let infoLabel: UILabel = {
+    private let infoLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -29,20 +29,20 @@ class BarCodeScannerController: BaseController {
         return label
     }()
     
-    fileprivate let supportedCodeTypes = [
-        AVMetadataObjectTypeQRCode,
-        AVMetadataObjectTypeEAN8Code,
-        AVMetadataObjectTypeUPCECode,
-        AVMetadataObjectTypeAztecCode,
-        AVMetadataObjectTypeEAN13Code,
-        AVMetadataObjectTypeITF14Code,
-        AVMetadataObjectTypeCode39Code,
-        AVMetadataObjectTypeCode93Code,
-        AVMetadataObjectTypePDF417Code,
-        AVMetadataObjectTypeCode128Code,
-        AVMetadataObjectTypeDataMatrixCode,
-        AVMetadataObjectTypeCode39Mod43Code,
-        AVMetadataObjectTypeInterleaved2of5Code
+    private let supportedCodeTypes = [
+        AVMetadataObject.ObjectType.qr,
+        AVMetadataObject.ObjectType.ean8,
+        AVMetadataObject.ObjectType.upce,
+        AVMetadataObject.ObjectType.aztec,
+        AVMetadataObject.ObjectType.ean13,
+        AVMetadataObject.ObjectType.itf14,
+        AVMetadataObject.ObjectType.code39,
+        AVMetadataObject.ObjectType.code93,
+        AVMetadataObject.ObjectType.pdf417,
+        AVMetadataObject.ObjectType.code128,
+        AVMetadataObject.ObjectType.dataMatrix,
+        AVMetadataObject.ObjectType.code39Mod43,
+        AVMetadataObject.ObjectType.interleaved2of5
     ]
     
     override var prefersStatusBarHidden: Bool { return true }
@@ -61,11 +61,11 @@ class BarCodeScannerController: BaseController {
         setupVideoPreviewLayer()
     }
     
-    fileprivate func setupVideoPreviewLayer() {
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+    private func setupVideoPreviewLayer() {
+        let captureDevice = AVCaptureDevice.default(for: .video)
         
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
             
             captureSession = AVCaptureSession()
             captureSession!.addInput(input)
@@ -76,8 +76,8 @@ class BarCodeScannerController: BaseController {
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
             
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
             view.layer.insertSublayer(videoPreviewLayer!, at: 0)
             

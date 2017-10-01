@@ -14,14 +14,14 @@ class CircularTransition: NSObject {
         case present, dismiss, pop
     }
     
-    fileprivate var circleView = UIView()
-    fileprivate var duration = 0.3
+    private var circleView = UIView()
+    private var duration = 0.3
     
     var circleColor = UIColor.white
     var startPoint = CGPoint.zero
     var transitionMode = TransitionMode.present
     
-    fileprivate func circleFrame(viewCenter: CGPoint, viewSize: CGSize, startPoint: CGPoint) -> CGRect {
+    private func circleFrame(viewCenter: CGPoint, viewSize: CGSize, startPoint: CGPoint) -> CGRect {
         let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
         let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
         let offsetVector = sqrt(xLength * xLength + yLength * yLength) * 2

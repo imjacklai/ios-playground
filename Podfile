@@ -6,9 +6,9 @@ target 'Playground' do
   use_frameworks!
 
   # Pods for Playground
-  pod 'SnapKit'
-  pod 'UIColor_Hex_Swift'
-  pod 'Kingfisher'
+  pod 'SnapKit', '~> 4.0.0'
+  pod 'UIColor_Hex_Swift', :git => 'https://github.com/yeahdongcn/UIColor-Hex-Swift'
+  pod 'Kingfisher', '~> 4.1.0'
 
   target 'PlaygroundTests' do
     inherit! :search_paths
