@@ -13,7 +13,8 @@ class HomeController: UITableViewController {
     private let items = [
         "Circular Transition",
         "Speech To Text",
-        "Barcode Scanner"
+        "Barcode Scanner",
+        "Image Recognition"
     ]
     
     override func viewDidLoad() {
@@ -47,6 +48,15 @@ class HomeController: UITableViewController {
             present(SpeechController(), animated: true, completion: nil)
         case 2:
             present(BarCodeScannerController(), animated: true, completion: nil)
+        case 3:
+            if #available(iOS 11.0, *) {
+                navigationController?.pushViewController(ImageRecognitionController(), animated: true)
+            } else {
+                let controller = UIAlertController(title: "裝置版本不符", message: "需要iOS 11版本以上", preferredStyle: .alert)
+                let action = UIAlertAction(title: "確定", style: .default, handler: nil)
+                controller.addAction(action)
+                present(controller, animated: true, completion: nil)
+            }
         default:()
         }
     }
